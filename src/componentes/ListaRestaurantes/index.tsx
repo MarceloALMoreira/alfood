@@ -84,6 +84,22 @@ const ListaRestaurantes = () => {
           nome: 'Risole',
           restaurante: 1,
           tag: 'Lanche'
+        },
+        {
+          id: 4,
+          descricao: 'Novo Patro',
+          imagem: '',
+          nome: 'Sashimi',
+          restaurante: 1,
+          tag: 'Japonesa'
+        },
+        {
+          id: 5,
+          descricao: 'Especial',
+          imagem: '',
+          nome: 'carnes',
+          restaurante: 1,
+          tag: 'Churasco'
         }
       ]
     }
