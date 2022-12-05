@@ -54,7 +54,26 @@
     }
 
 }
+
 .Links {
     text-align: center;
     margin: 2.5rem 0;
+}
+
+.Links a {
+    color: #fff;
+    background: #363E50;
+    padding: 8px;
+    text-decoration: none;
+    border-radius: 8px;
+    border: none;
+    width: 75px;
+    height: 35px;
+}
+
+.Links a:hover {
+    color: #fff;
+    background: #8e9dbf;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }

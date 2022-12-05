@@ -41,7 +41,7 @@ function App() {
       </div>
       <div className={estilos.Links}>
         <h3>Conheça os melhores restaurantes</h3>
-        <p>Clique <Link to='/restaurantes'>aqui</Link></p>
+        <p><Link to='/restaurantes'>Ver Mais</Link></p>
       </div>
       <Rodape />
     </>
