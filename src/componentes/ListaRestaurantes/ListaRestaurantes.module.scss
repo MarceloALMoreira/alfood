@@ -2,3 +2,22 @@
   margin-top: 1.5rem;
   padding: 2rem;
 }
+
+.Buttao {
+  color: #fff;
+  background: #363E50;
+  border-radius: 8px;
+  border: none;
+  width: 75px;
+  height: 35px;
+}
+
+.Buttao:hover {
+  color: #fff;
+  background: #8e9dbf;
+  border-radius: 8px;
+  width: 75px;
+  height: 35px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
