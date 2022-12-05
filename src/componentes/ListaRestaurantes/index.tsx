@@ -24,6 +24,8 @@ const ListaRestaurantes = () => {
 
   const [busca, setBusca] = useState('')
 
+  const [ordenacao, setOrdenacao] = useState('')
+
   //vamos carregar os dados pelo axios
   const carregarDados = (url: string, opcoes: AxiosRequestConfig = {}) => {
 
@@ -64,6 +66,21 @@ const ListaRestaurantes = () => {
   return (<section className={style.ListaRestaurantes}>
     <h1>Os restaurantes mais <em>bacanas</em>!</h1>
     <form onSubmit={buscar}>
+      <div>
+        <input type="text" value={busca} onChange={evento => setBusca(evento.target.value)} />
+      </div>
+      <div>
+        <label htmlFor="select-ordenacao">Ordenação</label>
+        <select name="select-ordenacao"
+          id="select-ordenacao"
+          value={ordenacao}
+          onChange={evento => setOrdenacao(evento.target.value)}
+        >
+          <option value="">Padrão</option>
+          <option value="id">Por ID</option>
+          <option value="nome">Por Nome</option>
+        </select>
+      </div>
       <input
         type="text"
         value={busca}
