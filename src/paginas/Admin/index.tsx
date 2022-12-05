@@ -34,6 +34,5 @@ const AdmRestaurantes = () => {
             </Table>
         </TableContainer>
     )
-
 }
 export default AdmRestaurantes
