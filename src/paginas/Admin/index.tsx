@@ -1,6 +1,7 @@
 import { Paper, Table, TableContainer, TableHead, TableRow, TableCell, TableBody } from '@mui/material'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import Restaurante from '../../componentes/ListaRestaurantes/Restaurante'
 import IRestaurante from '../../interfaces/IRestaurante'
 const AdmRestaurantes = () => {
@@ -21,6 +22,9 @@ const AdmRestaurantes = () => {
                         <TableCell>
                             Nome
                         </TableCell>
+                        <TableCell>
+                            Editar
+                        </TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>
@@ -28,6 +32,9 @@ const AdmRestaurantes = () => {
                         <TableRow key={restaurante.id}>
                             <TableCell>
                                 {restaurante.nome}
+                            </TableCell>
+                            <TableCell>
+                                [<Link to={`/admin/restaurantes/${restaurante.id}`}>Editar</Link>]
                             </TableCell>
                         </TableRow>)}
                 </TableBody>
