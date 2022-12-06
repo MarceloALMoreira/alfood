@@ -22,6 +22,7 @@ export const FormularioRestaurante = () => {
                 nome: nomeRestaurante
             })
                 .then(() => {
+                    setNomeRestaurante('')
                     alert('Restaurante atualizado com sucesso!')
                 })
         } else {
@@ -30,29 +31,30 @@ export const FormularioRestaurante = () => {
                 nome: nomeRestaurante
             })
                 .then(() => {
+                    setNomeRestaurante('')
                     alert('Restaurante cadastro com sucesso!')
                 })
         }
     }
 
     return (
-       
-            <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', flexGrow: 1 }}>
-                <Typography component="h1" variant="h6">Formulário de Restaurantes</Typography>
-                <Box component="form"
-                    sx={{ width: '100%' }}
-                    onSubmit={aoSubemeterForm}>
-                    <TextField value={nomeRestaurante}
-                        // onChange={evento => setNomeRestaurante(evento.target.value)}
-                        label="Nome do Restaurante"
-                        variant="standard"
-                        fullWidth
-                        required
-                    />
-                    <Button sx={{ marginTop: 1 }} type='submit' variant="outlined">Salvar</Button>
-                    <Button sx={{ marginTop: 1, marginLeft: 1 }} href='/admin/restaurantes' variant="outlined">Voltar</Button>
-                </Box>
+
+        <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', flexGrow: 1 }}>
+            <Typography component="h1" variant="h6">Formulário de Restaurantes</Typography>
+            <Box component="form"
+                sx={{ width: '100%' }}
+                onSubmit={aoSubemeterForm}>
+                <TextField value={nomeRestaurante}
+                    onChange={evento => setNomeRestaurante(evento.target.value)}
+                    label="Nome do Restaurante"
+                    variant="standard"
+                    fullWidth
+                    required
+                />
+                <Button sx={{ marginTop: 1 }} type='submit' variant="outlined">Salvar</Button>
+                <Button sx={{ marginTop: 1, marginLeft: 1 }} href='/admin/restaurantes' variant="outlined">Voltar</Button>
             </Box>
+        </Box>
 
 
     )
