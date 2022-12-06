@@ -30,7 +30,7 @@ const PaginaBaseAdmin = () =>   {
                 <Container maxWidth='lg' sx={{ mt: 1 }}>
                     <Paper sx={{ p: 2 }}>
                         {/* Conteudo da pagina */}
-                        
+                        <Outlet/>
                     </Paper>
                 </Container>
             </Box>
