@@ -3,6 +3,7 @@ import { TextField, Button, Typography, Box, FormControl, InputLabel, Select, Me
 import http from '../../../http';
 import ITag from '../../../interfaces/ITag';
 import IRestaurante from '../../../interfaces/IRestaurante';
+import { request } from 'http';
 export const FormularioPrato = () => {
 
 
@@ -37,8 +38,38 @@ export const FormularioPrato = () => {
     const aoSubemeterForm = (evento: React.FormEvent<HTMLFormElement>) => {
         evento.preventDefault()
 
+
+        //Enviando para o back-end
         const formData = new FormData();
+
         formData.append('nome', nomePrato)
+        formData.append('descricao', descricao)
+
+        formData.append('tag', tag)
+        formData.append('restaurante', restaurante)
+
+        if (imagem) {
+            formData.append('imagem', imagem)
+        }
+        http.request({
+            url: 'pratos/',
+            method: 'POST',
+            headers: {
+                'Content-Type': 'multipart/form-data'
+            },
+            data: formData
+        })
+            // limpando formularios apos o alert de sucesso
+            .then(resposta => {
+                setNomePrato('')
+                setDescricao('')
+                setTag('')
+                setRestaurante('')
+                alert('Prato cadastrodo com sucesso!')
+            })
+
+            .catch(erro => console.log('erro 404!'))
+
     }
 
     return (
@@ -69,7 +100,7 @@ export const FormularioPrato = () => {
                     <InputLabel id='select-tag'>Tag</InputLabel>
                     <Select labelId='select-tag' value={tag} onChange={evento => setTag(evento.target.value)}>
                         {tags.map(tag =>
-                            <MenuItem key={tag.id} value={tag.id}>
+                            <MenuItem key={tag.id} value={tag.value}>
                                 {tag.value}
                             </MenuItem>
                         )}
